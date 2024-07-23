@@ -1,0 +1,11 @@
+.buttonContainer {
+  display: flex;
+  justify-content: start;
+  margin: 0 80px;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    margin: 0 20px;
+  }
+}

@@ -1,0 +1,131 @@
+.container {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container img {
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  margin-right: 40px;
+  box-shadow: 1px 10px 20px rgba(115, 61, 217, 0.3);
+}
+
+.character_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed #733dd9;
+  border-radius: 40px;
+  padding: 40px;
+  background-color: rgba(115, 61, 217, 0.1);
+}
+
+.details {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.details span {
+  font-weight: bold;
+}
+
+.location_details {
+  border: 3px dashed #733dd9;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: rgba(115, 61, 217, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.location_details span {
+  font-weight: bold;
+}
+
+.location_details p {
+  margin: 10px 0;
+}
+
+.episode_details {
+  border: 3px dashed #733dd9;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: #fff;
+  text-align: start;
+  background-color: rgba(115, 61, 217, 0.1);
+}
+
+.episode_details span {
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: start;
+  margin: 0 80px;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    margin: 0 20px;
+  }
+
+  .character_card {
+    border-radius: 30px;
+    padding: 40px;
+  }
+
+  .container img {
+    height: 250px;
+    width: 250px;
+    margin-right: 40px;
+  }
+
+  .location_details {
+    border-radius: 20px;
+    padding: 30px;
+    font-size: 15px;
+  }
+
+  .episode_details {
+    font-size: 15px;
+  }
+
+  .details {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .character_card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+    background-color: rgba(115, 61, 217, 0.1);
+  }
+
+  .container img {
+    margin: 0;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .episodes {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 475px) {
+  .episodes {
+    padding: 20px;
+  }
+}
