@@ -13,7 +13,6 @@ This project is a React application built for the Refrens assignment. It demonst
 - **Filtering and Search**: Allows users to filter and search content dynamically.
 - **Infinite Scrolling**: Implements infinite scrolling to load more items as the user scrolls.
 - **Navigation**: Provides navigation between different views with React Router.
-- **Testing**: Includes tests for components using Vitest.
 
 ## Installation
 
