@@ -8,10 +8,15 @@ export default function Navbar() {
   const currentPath = location.pathname.startsWith('/')
     ? location.pathname.substring(1)
     : location.pathname;
-  const [active, setActive] = useState(currentPath);
+  const [active, setActive] = useState(currentPath ? currentPath : 'home');
   const clickHandler = (event) => {
     const id = event.target.id;
-    if (id === 'home' || id === 'characters' || id === 'locations')
+    if (
+      id === 'home' ||
+      id === 'characters' ||
+      id === 'locations' ||
+      id === 'episodes'
+    )
       setActive(event.target.id);
   };
   return (
@@ -24,7 +29,9 @@ export default function Navbar() {
         <div className={classes.links} onClick={clickHandler}>
           <Link
             to="/"
-            className={`${classes.link} ${active === '' ? classes.active : ''}`}
+            className={`${classes.link} ${
+              active === 'home' ? classes.active : ''
+            }`}
             id="home"
           >
             Home
@@ -47,8 +54,30 @@ export default function Navbar() {
           >
             Locations
           </Link>
+          <Link
+            to="/episodes"
+            className={`${classes.link} ${
+              active === 'episodes' ? classes.active : ''
+            }`}
+            id="episodes"
+          >
+            Episodes
+          </Link>
         </div>
       </nav>
+      {active === 'home' && (
+        <div className={classes.home}>
+          Please use the navbar links to navigate through different features of
+          the website.
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/ishansinghcms/refrens"
+          >
+            Codebase Link
+          </a>
+        </div>
+      )}
       <div className={classes.outlet}>
         <Outlet />
       </div>

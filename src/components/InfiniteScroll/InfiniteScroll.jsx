@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Card from '../Card/Card';
 
 const InfiniteScroll = ({ apiUrl }) => {
@@ -48,6 +49,11 @@ const InfiniteScroll = ({ apiUrl }) => {
       {hasMore && <div>Loading more items...</div>}
     </div>
   );
+};
+
+// Define prop types
+InfiniteScroll.propTypes = {
+  apiUrl: PropTypes.string.isRequired,
 };
 
 export default InfiniteScroll;

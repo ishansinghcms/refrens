@@ -33,7 +33,7 @@ export default function Locations() {
 
   return (
     <div className={classes.container}>
-      {currentPath === 'locations' && (
+      {currentPath === 'episodes' && (
         <>
           <div className={classes.controls}>
             <input
@@ -46,14 +46,14 @@ export default function Locations() {
             <button onClick={handleSearch} className={classes.search_button}>
               Search
             </button>
-            <p>Click on a location card to view its residents.</p>
+            <p>Click on an episode card to view its characters.</p>
           </div>
           {content.infiniteScroll && (
-            <InfiniteScroll apiUrl="https://rickandmortyapi.com/api/location" />
+            <InfiniteScroll apiUrl="https://rickandmortyapi.com/api/episode" />
           )}
           {content.filterByName && (
             <FilteredContent
-              apiUrl={`https://rickandmortyapi.com/api/location?name=${searchValue}`}
+              apiUrl={`https://rickandmortyapi.com/api/episode?name=${searchValue}`}
               setContent={setContent}
             />
           )}

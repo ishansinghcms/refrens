@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classes from './style.module.css';
 import { forwardRef } from 'react';
 
@@ -75,5 +76,24 @@ const Controls = forwardRef(
     );
   }
 );
+
+Controls.displayName = 'Controls';
+
+// Define prop types
+Controls.propTypes = {
+  applyFilters: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,
+  filters: PropTypes.shape({
+    status: PropTypes.string,
+    species: PropTypes.string,
+    gender: PropTypes.string,
+  }).isRequired,
+  isOpen: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    open: PropTypes.bool.isRequired,
+  }).isRequired,
+  togglePopup: PropTypes.func.isRequired,
+};
 
 export default Controls;

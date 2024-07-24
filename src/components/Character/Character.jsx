@@ -8,6 +8,11 @@ export default function Character() {
   const location = useLocation();
   const id = location.pathname.match(/\/(\d+)(?!.*\d)/)[0];
   const navigate = useNavigate();
+  // Get the search parameters from the current URL
+  const searchParams = new URLSearchParams(location.search);
+  // Extract the value of the 'loc' parameter
+  const locValue = searchParams.get('loc');
+  const epiValue = searchParams.get('epi');
 
   const fetchItems = async () => {
     try {
@@ -48,10 +53,12 @@ export default function Character() {
   };
   useEffect(() => {
     fetchItems();
-  }, []);
+  });
 
   const handleClick = () => {
-    navigate('/characters');
+    if (locValue) navigate('/locations');
+    else if (epiValue) navigate('/episodes');
+    else navigate('/characters');
   };
 
   return (
@@ -150,7 +157,7 @@ export default function Character() {
           )}
           {character.episodes && (
             <div className={classes.episodes}>
-              <h3>Featured Episodes Card</h3>
+              <h3>FEATURED EPISODES CARD</h3>
               <div className={classes.episode_details}>
                 {character.episodes.map((e, index) => (
                   <p key={index}>

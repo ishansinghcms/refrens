@@ -19,12 +19,3 @@
   box-shadow: 1px 10px 20px rgba(115, 61, 217, 0.3);
   transform: scale(1.05);
 }
-
-.location_card {
-  padding: 5px;
-  background-color: rgba(115, 61, 217, 0.3);
-}
-
-.location_card .location_name {
-  text-decoration: underline;
-}

@@ -47,12 +47,37 @@ img {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  height: 500px;
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
   .logo span {
     display: none;
   }
 
   .navbar {
     max-width: 768px;
+  }
+}
+
+@media (max-width: 510px) {
+  .links {
+    margin: 0;
+  }
+
+  .link {
+    padding: 5px;
+    color: #fff;
+    font-size: 10px;
+    text-decoration: none;
+    margin: 0 5px;
   }
 }

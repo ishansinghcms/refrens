@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import classes from './style.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function FilteredContent({ apiUrl, setContent }) {
   const [items, setItems] = useState([]);
   const [availableContent, setAvailableContent] = useState(true);
-  const fetchItems = async () => {
+  const fetchItems = useCallback(async () => {
     try {
       setAvailableContent(true);
       const response = await fetch(apiUrl);
@@ -15,10 +16,10 @@ export default function FilteredContent({ apiUrl, setContent }) {
     } catch (error) {
       setAvailableContent(false);
     }
-  };
+  }, [apiUrl]);
   useEffect(() => {
     fetchItems();
-  }, [apiUrl]);
+  }, [apiUrl, fetchItems]);
 
   const handleClick = () => {
     setContent({
@@ -40,3 +41,12 @@ export default function FilteredContent({ apiUrl, setContent }) {
     </div>
   );
 }
+
+// Set a display name for the component
+FilteredContent.displayName = 'FilteredContent';
+
+// Define prop types
+FilteredContent.propTypes = {
+  apiUrl: PropTypes.string.isRequired,
+  setContent: PropTypes.func.isRequired,
+};
