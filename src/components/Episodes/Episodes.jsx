@@ -11,12 +11,17 @@ export default function Locations() {
     infiniteScroll: true,
     filterByName: false,
   });
+
+  // for accessing input field's value
   const ref = useRef();
   const location = useLocation();
+
+  // extracting current path to display data on UI conditionally
   const currentPath = location.pathname.startsWith('/')
     ? location.pathname.substring(1)
     : location.pathname;
 
+  // handles searching through name
   const handleSearch = () => {
     searchValue = ref.current.value;
     setContent({

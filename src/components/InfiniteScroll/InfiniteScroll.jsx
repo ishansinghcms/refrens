@@ -8,6 +8,7 @@ const InfiniteScroll = ({ apiUrl }) => {
   const [page, setPage] = useState(1);
   const observer = useRef();
 
+  //function to fetch item for infinite scroll functionality
   const fetchItems = useCallback(async () => {
     if (!hasMore) return;
     try {
@@ -24,6 +25,7 @@ const InfiniteScroll = ({ apiUrl }) => {
     fetchItems();
   }, [fetchItems]);
 
+  //function to listen to event when the last item is visible on the UI
   const lastItemRef = useCallback(
     (node) => {
       if (observer.current) observer.current.disconnect();

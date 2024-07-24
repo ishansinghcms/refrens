@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 export default function FilteredContent({ apiUrl, setContent }) {
   const [items, setItems] = useState([]);
   const [availableContent, setAvailableContent] = useState(true);
+
+  // function to fetch items based on apiUrl passed as prop
   const fetchItems = useCallback(async () => {
     try {
       setAvailableContent(true);
@@ -21,6 +23,7 @@ export default function FilteredContent({ apiUrl, setContent }) {
     fetchItems();
   }, [apiUrl, fetchItems]);
 
+  // handles back navigation to previous page
   const handleClick = () => {
     setContent({
       infiniteScroll: true,

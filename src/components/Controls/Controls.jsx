@@ -7,6 +7,7 @@ const Controls = forwardRef(
     { applyFilters, handleChange, handleSearch, filters, isOpen, togglePopup },
     ref
   ) => {
+    // handles 'enter' press to trigger search
     const handleKeyDown = (event) => {
       if (event.key === 'Enter') {
         handleSearch();

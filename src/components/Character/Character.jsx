@@ -10,10 +10,11 @@ export default function Character() {
   const navigate = useNavigate();
   // Get the search parameters from the current URL
   const searchParams = new URLSearchParams(location.search);
-  // Extract the value of the 'loc' parameter
+  // Extract the value of the query parameters
   const locValue = searchParams.get('loc');
   const epiValue = searchParams.get('epi');
 
+  //function to fetch a particular character
   const fetchItems = async () => {
     try {
       const response = await fetch(

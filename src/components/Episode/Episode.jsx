@@ -10,6 +10,7 @@ export default function Location() {
   const id = loc.pathname.match(/\/(\d+)(?!.*\d)/)[0];
   const navigate = useNavigate();
 
+  // function to fetch a particular episode
   const fetchItems = async () => {
     try {
       const response = await fetch(
@@ -25,6 +26,8 @@ export default function Location() {
   useEffect(() => {
     fetchItems();
   });
+
+  //handles previous web page navigation
   const handleClick = () => {
     navigate('/episodes');
   };

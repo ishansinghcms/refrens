@@ -7,6 +7,8 @@ const LocationCard = forwardRef(({ url }, ref) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // function to fetch a particular location
   const fetchItem = async () => {
     try {
       const response = await fetch(url);
@@ -21,6 +23,7 @@ const LocationCard = forwardRef(({ url }, ref) => {
     fetchItem();
   });
 
+  //handles previous web page navigation
   const handeClick = (id) => {
     navigate(`/characters/${id}?loc=true`);
   };

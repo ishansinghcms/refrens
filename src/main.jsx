@@ -9,7 +9,7 @@ import Location from './components/Location/Location';
 import Episode from './components/Episode/Episode';
 import Character from './components/Character/Character';
 
-//COMMENTSSSSSSSSSSSSSSSSSSS
+// routes
 const routes = [
   {
     path: '/',

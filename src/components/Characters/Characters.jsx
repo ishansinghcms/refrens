@@ -20,17 +20,23 @@ export default function Characters() {
     customFilter: false,
     filterByName: false,
   });
+
+  // for accessing input field's value
   const ref = useRef();
   const location = useLocation();
+
+  // extracting current path to display data on UI conditionally
   const currentPath = location.pathname.startsWith('/')
     ? location.pathname.substring(1)
     : location.pathname;
 
+  // handles change in filter dropdown
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFilters({ ...filters, [name]: value });
   };
 
+  //toggles the popup
   const togglePopup = () => {
     setIsOpen({
       open: !isOpen.open,
@@ -38,6 +44,7 @@ export default function Characters() {
     });
   };
 
+  // function to apply filters and later call required API
   const applyFilters = () => {
     togglePopup();
     if (!filters.status && !filters.gender && !filters.species) return;
@@ -48,6 +55,8 @@ export default function Characters() {
       filterByName: false,
     });
   };
+
+  // handles searching through name
   const handleSearch = () => {
     searchValue = ref.current.value;
     setContent({
