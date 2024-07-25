@@ -13,7 +13,6 @@ export default function Location() {
   // function to fetch a particular location
   const fetchItems = async () => {
     try {
-      console.log('object');
       const response = await fetch(
         `https://rickandmortyapi.com/api/location/${id}`
       );
