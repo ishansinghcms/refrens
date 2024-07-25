@@ -13,6 +13,7 @@ export default function Location() {
   // function to fetch a particular location
   const fetchItems = async () => {
     try {
+      console.log('object');
       const response = await fetch(
         `https://rickandmortyapi.com/api/location/${id}`
       );
@@ -25,7 +26,7 @@ export default function Location() {
   };
   useEffect(() => {
     fetchItems();
-  });
+  }, []);
 
   //handles previous web page navigation
   const handleClick = () => {

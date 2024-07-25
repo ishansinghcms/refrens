@@ -21,7 +21,7 @@ const EpisodeCard = forwardRef(({ url }, ref) => {
   };
   useEffect(() => {
     fetchItem();
-  });
+  }, []);
 
   //handles previous web page navigation
   const handeClick = (id) => {

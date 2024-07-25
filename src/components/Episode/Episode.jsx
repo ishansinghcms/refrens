@@ -25,7 +25,7 @@ export default function Location() {
   };
   useEffect(() => {
     fetchItems();
-  });
+  }, []);
 
   //handles previous web page navigation
   const handleClick = () => {

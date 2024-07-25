@@ -54,7 +54,7 @@ export default function Character() {
   };
   useEffect(() => {
     fetchItems();
-  });
+  }, []);
 
   const handleClick = () => {
     if (locValue) navigate('/locations');
